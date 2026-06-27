@@ -165,5 +165,6 @@ biopython>=1.79
 ## 📚 Referensi
 
 - [NCBI Nucleotide Database – NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)
-- Cole, S.T. et al. (1998). *Deciphering the biology of Mycobacterium tuberculosis from the complete genome sequence.* Nature, 393, 537–544.
-- Lobry, J.R. (1996). *Asymmetric substitution patterns in the two DNA strands of bacteria.* Molecular Biology and Evolution, 13(5), 660–665.
+- Chitale P, Lemenze AD, Fogarty EC, Shah A, Grady C, Odom-Mabey AR, Johnson WE, Yang JH, Eren AM, Brosch R, et al. 2022. A comprehensive update to the Mycobacterium tuberculosis H37Rv reference genome. Nat Commun. 13:7068. doi:10.1038/s41467-022-34853-x.
+- Cuevas-Córdoba B, Fresno C, Haase-Hernández JI, Barbosa-Amezcua M, Mata-Rocha M, Muñoz-Torrico M, Salazar-Lezama MA, Martínez-Orozco JA, Narváez-Díaz LA, Salas-Hernández J, et al. 2021. A bioinformatics pipeline for Mycobacterium tuberculosis sequencing that cleans contaminant reads from sputum samples. PLoS ONE. 16(10):e0258774. doi:10.1371/journal.pone.0258774.
+- Vera-Cabrera L, Molina-Torres CA, Lopez-Ortiz JM, Castro-Garza J, Cordova-Fletes C, Ocampo-Candiani J. 2020. Complete genome sequences of Mycobacterium tuberculosis isolates subjected to 200 continuous passages. Microbiol Resour Announc. 9(26):e00356-20.
