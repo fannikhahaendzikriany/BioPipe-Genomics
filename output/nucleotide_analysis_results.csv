@@ -1,0 +1,11 @@
+Rank,Sequence_ID,Description,Length_bp,A,T,G,C,GC_Content_%,AT_Content_%,GC_Skew
+1,NC_000962.3_1,Mycobacterium tuberculosis H37Rv chromosome region 1,350,28,9,170,143,89.43,10.57,0.0863
+2,NC_000962.3_2,Mycobacterium tuberculosis H37Rv chromosome region 2,350,27,10,172,141,89.43,10.57,0.099
+3,NC_000962.3_5,Mycobacterium tuberculosis H37Rv chromosome region 5,350,28,9,172,141,89.43,10.57,0.099
+4,NC_000962.3_3,Mycobacterium tuberculosis H37Rv chromosome region 3,350,29,9,170,142,89.14,10.86,0.0897
+5,NC_000962.3_10,Mycobacterium tuberculosis H37Rv chromosome region 10,350,27,11,172,140,89.14,10.86,0.1026
+6,NC_000962.3_4,Mycobacterium tuberculosis H37Rv chromosome region 4,350,30,9,170,141,88.86,11.14,0.0932
+7,NC_000962.3_8,Mycobacterium tuberculosis H37Rv chromosome region 8,350,30,9,170,141,88.86,11.14,0.0932
+8,NC_000962.3_7,Mycobacterium tuberculosis H37Rv chromosome region 7,350,30,10,170,140,88.57,11.43,0.0968
+9,NC_000962.3_6,Mycobacterium tuberculosis H37Rv chromosome region 6,350,32,11,169,138,87.71,12.29,0.101
+10,NC_000962.3_9,Mycobacterium tuberculosis H37Rv chromosome region 9 (AT rich),357,105,134,74,44,33.05,66.95,0.2542

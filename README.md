@@ -1,0 +1,169 @@
+# 🧬 BioPipe-Genomics
+
+> **Pipeline Analisis Komposisi Nukleotida dan Visualisasi GC Content**  
+> Mata Kuliah: Struktur Data Bioinformatika (BIF1223) · IPB University · Pertemuan #15
+
+---
+
+## 📋 Deskripsi Proyek
+
+BioPipe-Genomics adalah pipeline bioinformatika berbasis Python yang dirancang untuk menganalisis komposisi nukleotida sekuens genomik. Pipeline ini mengintegrasikan berbagai **struktur data** fundamental (List, Dictionary, Sorting) untuk memproses file FASTA secara otomatis dan menghasilkan visualisasi serta laporan CSV.
+
+**Organisme:** *Mycobacterium tuberculosis* H37Rv  
+**Sumber Data:** [NCBI – NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)
+
+---
+
+## 🎯 Fitur Utama
+
+| Fitur | Struktur Data | Keterangan |
+|-------|--------------|------------|
+| Baca file FASTA/FASTQ | **List** | Menyimpan sekuens ke dalam list of dict |
+| Hitung frekuensi nukleotida | **Dictionary** | Iterasi A, T, G, C per sekuens |
+| Urutkan berdasarkan GC | **Sorting** | `sorted()` dengan Timsort (O n log n) |
+| Tampilkan 3 terbaik | List slicing | Top-N dengan GC Content tertinggi |
+| Visualisasi grafik | Matplotlib | 3-panel: bar, stacked bar, scatter |
+| Ekspor hasil | CSV | Tabel lengkap dengan semua metrik |
+
+---
+
+## 📂 Struktur Repositori
+
+```
+BioPipe-Genomics/
+│
+├── data/
+│   └── sequences.fasta          # File FASTA (M. tuberculosis H37Rv)
+│
+├── src/
+│   └── biopipe_analysis.py      # Script utama pipeline Python
+│
+├── output/
+│   ├── gc_analysis_visualization.png  # Grafik hasil analisis
+│   └── nucleotide_analysis_results.csv  # Tabel hasil analisis
+│
+├── docs/
+│   └── laporan_mini_project.pdf # Laporan mini project (PDF)
+│
+├── requirements.txt             # Dependensi Python
+└── README.md                    # Dokumentasi ini
+```
+
+---
+
+## 🚀 Cara Menjalankan
+
+### 1. Clone Repositori
+```bash
+git clone https://github.com/<username>/BioPipe-Genomics.git
+cd BioPipe-Genomics
+```
+
+### 2. Install Dependensi
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Jalankan Pipeline
+```bash
+python src/biopipe_analysis.py
+```
+
+### 4. Lihat Hasil
+- Grafik: `output/gc_analysis_visualization.png`
+- Data CSV: `output/nucleotide_analysis_results.csv`
+
+---
+
+## 🔬 Penjelasan Teknis
+
+### Tahap 1 – Membaca File FASTA (List)
+```python
+sequences: list[dict] = []   # List untuk menyimpan semua sekuens
+
+# Setiap elemen: {'id': str, 'description': str, 'sequence': str}
+sequences.append({
+    'id': current_id,
+    'description': current_desc,
+    'sequence': ''.join(current_seq).upper()
+})
+```
+
+### Tahap 2 – Frekuensi Nukleotida (Dictionary)
+```python
+freq: dict = {'A': 0, 'T': 0, 'G': 0, 'C': 0, 'other': 0}
+
+for nucleotide in sequence:
+    if nucleotide in freq:
+        freq[nucleotide] += 1
+```
+
+### Tahap 3 – Perhitungan GC Content
+```
+         G + C
+GC% = ————————————— × 100
+       A + T + G + C
+```
+
+### Tahap 4 – GC Skew (Bonus)
+```
+            G − C
+GC Skew = ————————
+            G + C
+```
+GC Skew digunakan untuk mengidentifikasi **origin of replication** pada kromosom bakteri.
+
+### Tahap 5 – Sorting
+```python
+sorted_results = sorted(results, key=lambda x: x['gc_content'], reverse=True)
+```
+
+---
+
+## 📊 Hasil Visualisasi
+
+![GC Content Analysis](output/gc_analysis_visualization.png)
+
+**Panel (a):** Bar chart GC Content per sekuens — garis oranye menunjukkan rata-rata  
+**Panel (b):** Komposisi nukleotida (A/T/G/C) dalam persen — stacked bar  
+**Panel (c):** Scatter plot GC Content vs GC Skew untuk identifikasi replikasi
+
+---
+
+## 📈 Hasil Analisis (Top 3 Sekuens)
+
+| Rank | Sequence ID | GC Content | AT Content | GC Skew | Length |
+|------|------------|-----------|-----------|---------|--------|
+| #1 | NC_000962.3_1 | 89.43% | 10.57% | 0.0863 | 350 bp |
+| #2 | NC_000962.3_2 | 89.43% | 10.57% | 0.0990 | 350 bp |
+| #3 | NC_000962.3_5 | 89.43% | 10.57% | 0.0990 | 350 bp |
+
+**Rata-rata GC Content:** 83.36%  
+> *M. tuberculosis dikenal sebagai organisme dengan GC Content sangat tinggi (~65.6%), menjadikannya salah satu bakteri dengan kandungan G+C tertinggi di antara patogen manusia.*
+
+---
+
+## 📦 Requirements
+
+```
+matplotlib>=3.5.0
+biopython>=1.79
+```
+
+---
+
+## 👨‍💻 Informasi
+
+**Mata Kuliah:** Struktur Data Bioinformatika (BIF1223)  
+**Dosen:** Toto Haryanto  
+**Institusi:** IPB University – Bogor, Indonesia  
+**Pertemuan:** #15 – Integrasi Struktur Data untuk Pipeline Analisis Sederhana  
+**Deadline:** 27 Juni 2026
+
+---
+
+## 📚 Referensi
+
+- [NCBI Nucleotide Database – NC_000962.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3)
+- Cole, S.T. et al. (1998). *Deciphering the biology of Mycobacterium tuberculosis from the complete genome sequence.* Nature, 393, 537–544.
+- Lobry, J.R. (1996). *Asymmetric substitution patterns in the two DNA strands of bacteria.* Molecular Biology and Evolution, 13(5), 660–665.
