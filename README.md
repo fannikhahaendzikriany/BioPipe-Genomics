@@ -55,7 +55,7 @@ BioPipe-Genomics/
 
 ### 1. Clone Repositori
 ```bash
-git clone https://github.com/<fannikhahaendzikriany>/BioPipe-Genomics.git
+git clone https://github.com/fannikhahaendzikriany/BioPipe-Genomics.git
 cd BioPipe-Genomics
 ```
 
@@ -139,7 +139,7 @@ sorted_results = sorted(results, key=lambda x: x['gc_content'], reverse=True)
 | #3 | NC_000962.3_5 | 89.43% | 10.57% | 0.0990 | 350 bp |
 
 **Rata-rata GC Content:** 83.36%  
-> *M. tuberculosis dikenal sebagai organisme dengan GC Content sangat tinggi (~65.6%), menjadikannya salah satu bakteri dengan kandungan G+C tertinggi di antara patogen manusia.*
+> *Fragmen sekuens yang dianalisis pada mini project ini memiliki GC Content yang relatif tinggi. Nilai tersebut dapat berbeda dari GC Content rata-rata genom Mycobacterium tuberculosis secara keseluruhan (~65,6%) karena analisis dilakukan pada fragmen sekuens tertentu, bukan seluruh genom.*
 
 ---
 
@@ -157,7 +157,7 @@ biopython>=1.79
 **Mata Kuliah:** Struktur Data Bioinformatika (BIF1223)  
 **Dosen:** Toto Haryanto  
 **Institusi:** IPB University – Bogor, Indonesia  
-**Pertemuan:** #15 – Integrasi Struktur Data untuk Pipeline Analisis Sederhana  
+**Pertemuan:** #15 Integrasi Struktur Data untuk Pipeline Analisis Sederhana  
 **Deadline:** 27 Juni 2026
 
 ---
