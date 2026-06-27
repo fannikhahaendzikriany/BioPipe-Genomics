@@ -55,7 +55,7 @@ BioPipe-Genomics/
 
 ### 1. Clone Repositori
 ```bash
-git clone https://github.com/<username>/BioPipe-Genomics.git
+git clone https://github.com/<fannikhahaendzikriany>/BioPipe-Genomics.git
 cd BioPipe-Genomics
 ```
 
